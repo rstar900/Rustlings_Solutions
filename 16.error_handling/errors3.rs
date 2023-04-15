@@ -21,7 +21,8 @@ fn main() -> Result<(), ParseIntError> {
         println!("You now have {} tokens.", tokens);
     }
 
-    Ok(())
+    //Ok is needed as there can be early return due to ParseIntError
+    Ok(()) // This is needed in case we don't error as main() returns () by default, 
 }
 
 pub fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {
